@@ -1,0 +1,29 @@
+.form-container {
+    width: 400px;
+    display: block;
+    margin: 0 auto;
+}
+
+.main-title {
+    text-align: center
+}
+
+.entry {
+    margin: 15px;
+}
+
+.location {
+    /*width: 400px;*/
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 10px;
+    margin-right: 20px;
+}
+
+.stars {
+    width: 100px;
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 16px;
+    font-style: italic;
+}

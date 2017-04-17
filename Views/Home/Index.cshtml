@@ -1,0 +1,43 @@
+@{
+    DateTime CurrentTime = DateTime.Now;
+}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>RESTauranter</title>
+  </head>
+  <body>
+    <div class="form-container">
+    <h1 class="main-title">Write a New Review</h1>
+    <hr>
+      <form action="/add_review" method="post">
+          <h6>Reviewer Name: </h6><input class="form-control" type="text" name="reviewer_name">
+          <h6>Restaurant Name: </h6><input class="form-control" type="text" name="restaurant_name">
+          <h6>Review: </h6><textarea rows="5" class="form-control" name="review"></textarea>
+          <h6>Date of Visit: </h6><input class="form-control" type="date" name="date">
+          <h6>Stars: </h6><select class="form-control" name="stars">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+          <input type="hidden" name="created_at" value="@CurrentTime">
+          <input type="hidden" name="updated_at" value="@CurrentTime">
+          </select><br>
+          <input class="btn btn-success btn-block" type="submit" value="Add Review">
+      </form><br><br>
+      <ul>
+        @{
+            if (ViewBag.Errors != null) {
+                foreach(var error in ViewBag.Errors) {
+                    <li>@error</li>
+                }
+            }
+        }   
+      </ul>
+      <a href="reviews"><button class="btn btn-default btn-s btn-block">See All Reviews</button></button></a>
+    </div>
+  </body>
+</html>

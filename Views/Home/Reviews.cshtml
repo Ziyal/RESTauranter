@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>RESTauranter</title>
+  </head>
+  <body>
+    <div class="reviews-container">
+    <h1 class="main-title">Reviews</h1>
+    <hr>
+
+      @{
+        foreach(var review in @ViewBag.AllReviews) {
+          <div class="entry">
+            <div class="entry-title"><h3 class="location">Review for: @review.restaurant_name</h3><h4 class="stars">@review.stars stars</h4></div>
+            <h5><b>Reviewer:</b> @review.reviewer_name, @review.date.ToString("MMMM d, yyyy")</h5>
+            <h4>@review.review</h4>
+          </div>
+          <hr>
+        }
+      }
+      <a href="/"><button class="btn btn-default btn-s btn-block">Go Back</button></button></a>
+    </div>
+  </body>
+</html>
